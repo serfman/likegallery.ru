@@ -4,9 +4,31 @@ interface FooterProps {
   phone: string
   whatsapp: string
   telegram: string
+  avitoUrl: string
+  vkUrl: string
+  rutubeUrl: string
+  tgChannelUrl: string
 }
 
-export function Footer({ phone, whatsapp, telegram }: FooterProps) {
+const SOCIAL_ICON_CLASS =
+  'flex items-center justify-center w-9 h-9 rounded-lg text-xs font-bold transition-all duration-200 hover:scale-110'
+
+export function Footer({
+  phone,
+  whatsapp,
+  telegram,
+  avitoUrl,
+  vkUrl,
+  rutubeUrl,
+  tgChannelUrl,
+}: FooterProps) {
+  const socials = [
+    avitoUrl && { href: avitoUrl, label: 'Авито', abbr: 'Av', cls: 'bg-[#00AAFF] text-white' },
+    vkUrl && { href: vkUrl, label: 'VK', abbr: 'VK', cls: 'bg-[#0077FF] text-white' },
+    rutubeUrl && { href: rutubeUrl, label: 'Rutube', abbr: 'RT', cls: 'bg-[#1B1B1B] text-white border border-parchment/20' },
+    tgChannelUrl && { href: tgChannelUrl, label: 'Telegram канал', abbr: 'TG', cls: 'bg-[#0088cc] text-white' },
+  ].filter(Boolean) as { href: string; label: string; abbr: string; cls: string }[]
+
   return (
     <footer className="border-t border-gold/20 bg-dark-soft py-12 mt-16">
       <div className="section-container">
@@ -19,6 +41,25 @@ export function Footer({ phone, whatsapp, telegram }: FooterProps) {
             <p className="text-parchment/60 text-sm leading-relaxed">
               Экспертная оценка, покупка и продажа предметов восточного искусства
             </p>
+
+            {/* Social channel icons */}
+            {socials.length > 0 && (
+              <div className="flex gap-2 mt-4">
+                {socials.map((s) => (
+                  <a
+                    key={s.abbr}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${SOCIAL_ICON_CLASS} ${s.cls}`}
+                    aria-label={s.label}
+                    title={s.label}
+                  >
+                    {s.abbr}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Navigation */}
