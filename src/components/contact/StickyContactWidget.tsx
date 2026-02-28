@@ -7,8 +7,12 @@ interface StickyContactWidgetProps {
   whatsapp: string
   telegram: string
   wechat: string
+  max: string
   avitoUrl: string
+  vkUrl: string
+  rutubeUrl: string
   phone: string
+  email: string
   message?: string
 }
 
@@ -16,8 +20,12 @@ export function StickyContactWidget({
   whatsapp,
   telegram,
   wechat,
+  max,
   avitoUrl,
+  vkUrl,
+  rutubeUrl,
   phone,
+  email,
   message = 'Здравствуйте, хочу оценить предмет...',
 }: StickyContactWidgetProps) {
   const [isOpen, setIsOpen] = useState(false)
@@ -40,8 +48,20 @@ export function StickyContactWidget({
             {wechat && (
               <ContactLink type="wechat" value={wechat} label="WeChat" />
             )}
+            {max && (
+              <ContactLink type="max" value={max} label="Max" />
+            )}
             {avitoUrl && (
               <ContactLink type="avito" value={avitoUrl} label="Авито" />
+            )}
+            {vkUrl && (
+              <ContactLink type="vk" value={vkUrl} label="ВКонтакте" />
+            )}
+            {rutubeUrl && (
+              <ContactLink type="rutube" value={rutubeUrl} label="Rutube" />
+            )}
+            {email && (
+              <ContactLink type="email" value={email} label={email} />
             )}
             {phone && (
               <ContactLink type="phone" value={phone} label={phone} />
@@ -63,7 +83,7 @@ export function StickyContactWidget({
       </div>
 
       {/* Mobile: full-width bottom panel */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 max-h-[85vh] overflow-y-auto">
         {isOpen && (
           <div className="bg-dark/97 backdrop-blur border-t border-gold/30 p-3 grid grid-cols-2 gap-2 animate-slide-in">
             {whatsapp && (
@@ -75,8 +95,20 @@ export function StickyContactWidget({
             {wechat && (
               <ContactLink type="wechat" value={wechat} label="WeChat" fullWidth />
             )}
+            {max && (
+              <ContactLink type="max" value={max} label="Max" fullWidth />
+            )}
             {avitoUrl && (
               <ContactLink type="avito" value={avitoUrl} label="Авито" fullWidth />
+            )}
+            {vkUrl && (
+              <ContactLink type="vk" value={vkUrl} label="ВКонтакте" fullWidth />
+            )}
+            {rutubeUrl && (
+              <ContactLink type="rutube" value={rutubeUrl} label="Rutube" fullWidth className="col-span-2" />
+            )}
+            {email && (
+              <ContactLink type="email" value={email} label={email} fullWidth className="col-span-2" />
             )}
             {phone && (
               <ContactLink type="phone" value={phone} label={phone} fullWidth className="col-span-2" />
@@ -87,7 +119,7 @@ export function StickyContactWidget({
           onClick={() => setIsOpen(!isOpen)}
           className={`
             w-full py-3.5 font-semibold text-sm tracking-wide
-            transition-colors duration-200
+            transition-colors duration-200 sticky bottom-0 z-[60]
             ${isOpen ? 'bg-dark/95 text-parchment/80 border-t border-gold/20' : 'bg-gold text-dark'}
           `}
         >

@@ -1,5 +1,7 @@
+import { Icons } from '@/components/ui/Icons'
+
 interface ContactLinkProps {
-  type: 'whatsapp' | 'telegram' | 'wechat' | 'avito' | 'phone'
+  type: 'whatsapp' | 'telegram' | 'wechat' | 'max' | 'avito' | 'vk' | 'rutube' | 'phone' | 'email'
   value: string
   message?: string
   label: string
@@ -7,20 +9,18 @@ interface ContactLinkProps {
   className?: string
 }
 
-const STYLES: Record<ContactLinkProps['type'], string> = {
-  whatsapp: 'bg-[#25D366] text-white',
-  telegram: 'bg-[#0088cc] text-white',
-  wechat: 'bg-[#07c160] text-white',
-  avito: 'bg-[#00AAFF] text-white',
-  phone: 'bg-white/10 text-parchment border border-parchment/30',
-}
+const PREMIER_STYLE = 'bg-dark/60 text-parchment border border-gold/20 hover:border-gold/60 hover:text-white hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm'
 
-const ICONS: Record<ContactLinkProps['type'], string> = {
-  whatsapp: 'WA',
-  telegram: 'TG',
-  wechat: 'WC',
-  avito: 'Av',
-  phone: '📞',
+const STYLES: Record<ContactLinkProps['type'], string> = {
+  whatsapp: PREMIER_STYLE,
+  telegram: PREMIER_STYLE,
+  wechat: PREMIER_STYLE,
+  max: PREMIER_STYLE,
+  avito: PREMIER_STYLE,
+  vk: PREMIER_STYLE,
+  rutube: PREMIER_STYLE,
+  phone: PREMIER_STYLE,
+  email: PREMIER_STYLE,
 }
 
 function buildHref(type: ContactLinkProps['type'], value: string, message?: string): string {
@@ -32,10 +32,16 @@ function buildHref(type: ContactLinkProps['type'], value: string, message?: stri
       return `https://t.me/${value}${encoded ? `?text=${encoded}` : ''}`
     case 'wechat':
       return `weixin://dl/chat?${value}`
+    case 'max':
+      return `https://max.ru/${value}`
     case 'avito':
+    case 'vk':
+    case 'rutube':
       return value
     case 'phone':
       return `tel:${value}`
+    case 'email':
+      return `mailto:${value}`
   }
 }
 
@@ -43,7 +49,9 @@ export function ContactLink({ type, value, message, label, fullWidth, className 
   if (!value) return null
 
   const href = buildHref(type, value, message)
-  const isExternal = type !== 'phone'
+  const isExternal = type !== 'phone' && type !== 'email'
+
+  const IconComponent = Icons[type]
 
   return (
     <a
@@ -54,12 +62,12 @@ export function ContactLink({ type, value, message, label, fullWidth, className 
         ${fullWidth ? 'w-full' : ''}
         flex items-center justify-center gap-2
         px-4 py-2.5 rounded-xl font-semibold text-sm
-        shadow-md hover:opacity-90 active:scale-95
+        shadow-md active:scale-95
         transition-all duration-150
         ${className ?? ''}
       `}
     >
-      <span className="text-xs font-bold opacity-80">{ICONS[type]}</span>
+      <IconComponent className="w-5 h-5 flex-shrink-0" />
       {label}
     </a>
   )

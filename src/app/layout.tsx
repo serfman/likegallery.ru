@@ -27,21 +27,35 @@ export default function RootLayout({
   const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP ?? ''
   const telegram = process.env.NEXT_PUBLIC_TELEGRAM ?? ''
   const wechat = process.env.NEXT_PUBLIC_WECHAT ?? ''
+  const max = process.env.NEXT_PUBLIC_MAX ?? ''
   const avitoUrl = process.env.NEXT_PUBLIC_AVITO_URL ?? ''
+  const vkUrl = process.env.NEXT_PUBLIC_VK_URL ?? ''
+  const rutubeUrl = process.env.NEXT_PUBLIC_RUTUBE_URL ?? ''
   const phone = process.env.NEXT_PUBLIC_PHONE ?? ''
+  const email = process.env.NEXT_PUBLIC_EMAIL ?? ''
+  const tgChannel = process.env.NEXT_PUBLIC_TG_CHANNEL ?? ''
 
   return (
     <html lang="ru" className="scroll-smooth">
       <body className="bg-dark text-parchment font-sans antialiased min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>
-        <Footer phone={phone} whatsapp={whatsapp} telegram={telegram} />
+        <Footer
+          phone={phone}
+          email={email}
+          whatsapp={whatsapp}
+          telegram={telegram}
+        />
         <StickyContactWidget
           whatsapp={whatsapp}
           telegram={telegram}
           wechat={wechat}
+          max={max}
           avitoUrl={avitoUrl}
+          vkUrl={vkUrl}
+          rutubeUrl={rutubeUrl}
           phone={phone}
+          email={email}
         />
       </body>
     </html>

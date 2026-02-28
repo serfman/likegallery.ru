@@ -77,8 +77,91 @@ export default async function HomePage() {
             ))}
           </div>
 
-          <div id="contact">
-            <p className="text-parchment/70 text-sm mb-4">Выберите удобный способ связи:</p>
+          <div id="contact" className="space-y-8">
+            <p className="text-parchment/70 text-sm">Выберите удобный способ связи:</p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
+              {/* Связаться */}
+              <div className="bg-dark/40 rounded-xl p-6 border border-gold/10 relative overflow-hidden group">
+                {/* Subtle hover gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                <h3 className="font-serif text-gold text-lg mb-4 text-center sm:text-left relative z-10">Написать в мессенджер</h3>
+                <div className="flex flex-col gap-3 relative z-10">
+                  <a
+                    href="https://t.me/79911588833"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-dark/60 text-parchment border border-gold/20 px-4 py-3 rounded-xl hover:border-gold/60 hover:text-white hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm transition-all shadow-md active:scale-95"
+                  >
+                    <span className="font-bold text-sm text-gold">TG</span>
+                    <span className="text-sm font-medium tracking-wide">+7 991 158-88-33</span>
+                  </a>
+                  <a
+                    href="weixin://dl/chat?79911588833"
+                    className="flex items-center gap-3 bg-dark/60 text-parchment border border-gold/20 px-4 py-3 rounded-xl hover:border-gold/60 hover:text-white hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm transition-all shadow-md active:scale-95"
+                  >
+                    <span className="font-bold text-sm text-gold">WC</span>
+                    <span className="text-sm font-medium tracking-wide">WeChat</span>
+                  </a>
+                  <a
+                    href="https://max.ru/79911588833"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-dark/60 text-parchment border border-gold/20 px-4 py-3 rounded-xl hover:border-gold/60 hover:text-white hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm transition-all shadow-md active:scale-95"
+                  >
+                    <span className="font-bold text-sm text-[#FF4500]">MAX</span>
+                    <span className="text-sm font-medium tracking-wide">+7 991 158-88-33</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Наши каналы */}
+              <div className="bg-dark/40 rounded-xl p-6 border border-gold/10 relative overflow-hidden group">
+                {/* Subtle hover gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                <h3 className="font-serif text-gold text-lg mb-4 text-center sm:text-left relative z-10">Наши каналы</h3>
+                <div className="flex flex-col gap-3 relative z-10">
+                  <a
+                    href="https://www.avito.ru/brands/antik1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-dark/60 text-parchment border border-gold/20 px-4 py-3 rounded-xl hover:border-gold/60 hover:text-white hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm transition-all shadow-md active:scale-95"
+                  >
+                    <span className="font-bold text-sm text-[#00AAFF]">Av</span>
+                    <span className="text-sm font-medium tracking-wide">Авито</span>
+                  </a>
+                  <a
+                    href="https://vk.com/clubgalleru"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-dark/60 text-parchment border border-gold/20 px-4 py-3 rounded-xl hover:border-gold/60 hover:text-white hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm transition-all shadow-md active:scale-95"
+                  >
+                    <span className="font-bold text-sm text-[#0077FF]">VK</span>
+                    <span className="text-sm font-medium tracking-wide">VK ВКонтакте</span>
+                  </a>
+                  <a
+                    href="https://rutube.ru/channel/76051106/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-dark/60 text-parchment border border-gold/20 px-4 py-3 rounded-xl hover:border-gold/60 hover:text-white hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm transition-all shadow-md active:scale-95"
+                  >
+                    <span className="font-bold text-sm text-[#00AAFF]">RT</span>
+                    <span className="text-sm font-medium tracking-wide">Rutube</span>
+                  </a>
+                  <a
+                    href="https://t.me/+o6vNZULvpwwyZTRi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-dark/60 text-parchment border border-gold/20 px-4 py-3 rounded-xl hover:border-gold/60 hover:text-white hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm transition-all shadow-md active:scale-95"
+                  >
+                    <span className="font-bold text-sm text-[#0088cc]">TG</span>
+                    <span className="text-sm font-medium tracking-wide">Telegram Канал</span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

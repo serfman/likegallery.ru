@@ -1,18 +1,25 @@
 import Link from 'next/link'
+import { Icons } from '@/components/ui/Icons'
 
 interface FooterProps {
   phone: string
+  email: string
   whatsapp: string
   telegram: string
 }
 
-export function Footer({ phone, whatsapp, telegram }: FooterProps) {
+export function Footer({ phone, email, whatsapp, telegram }: FooterProps) {
+  const vkUrl = process.env.NEXT_PUBLIC_VK_URL ?? ''
+  const rutubeUrl = process.env.NEXT_PUBLIC_RUTUBE_URL ?? ''
+  const avitoUrl = process.env.NEXT_PUBLIC_AVITO_URL ?? ''
+  const tgChannel = process.env.NEXT_PUBLIC_TG_CHANNEL ?? ''
+
   return (
     <footer className="border-t border-gold/20 bg-dark-soft py-12 mt-16">
       <div className="section-container">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
-          <div>
+          <div className="md:col-span-1">
             <div className="font-serif text-2xl font-bold text-parchment mb-3">
               Галерея <span className="text-gold">ЛИК</span>
             </div>
@@ -33,7 +40,7 @@ export function Footer({ phone, whatsapp, telegram }: FooterProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block text-parchment/60 hover:text-gold text-sm transition-colors"
+                  className="block w-fit text-parchment/60 hover:text-gold text-sm transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -44,41 +51,108 @@ export function Footer({ phone, whatsapp, telegram }: FooterProps) {
           {/* Contacts */}
           <div>
             <h3 className="text-parchment font-semibold mb-4 text-sm uppercase tracking-wider">Связаться</h3>
-            <div className="space-y-2">
+            <div className="space-y-3">
               {phone && (
                 <a
                   href={`tel:${phone}`}
-                  className="block text-parchment/60 hover:text-gold text-sm transition-colors"
+                  className="flex items-center gap-2 text-parchment/60 hover:text-gold text-sm transition-colors w-fit"
                 >
+                  <Icons.phone className="w-4 h-4" />
                   {phone}
                 </a>
               )}
-              {whatsapp && (
+              {email && (
                 <a
-                  href={`https://wa.me/${whatsapp}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-parchment/60 hover:text-gold text-sm transition-colors"
+                  href={`mailto:${email}`}
+                  className="flex items-center gap-2 text-parchment/60 hover:text-gold text-sm transition-colors w-fit"
                 >
-                  WhatsApp
+                  <Icons.email className="w-4 h-4" />
+                  {email}
                 </a>
               )}
-              {telegram && (
+
+              {/* Messengers Row */}
+              <div className="flex gap-3 pt-2">
+                {whatsapp && (
+                  <a
+                    href={`https://wa.me/${whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-parchment hover:text-white hover:bg-[#25D366] transition-all border border-gold/20 hover:border-transparent"
+                    aria-label="WhatsApp"
+                  >
+                    <Icons.whatsapp className="w-5 h-5" />
+                  </a>
+                )}
+                {telegram && (
+                  <a
+                    href={`https://t.me/${telegram}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-parchment hover:text-white hover:bg-[#0088cc] transition-all border border-gold/20 hover:border-transparent"
+                    aria-label="Telegram"
+                  >
+                    <Icons.telegram className="w-5 h-5" />
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Channels */}
+          <div>
+            <h3 className="text-parchment font-semibold mb-4 text-sm uppercase tracking-wider">Наши каналы</h3>
+            <div className="flex flex-wrap gap-3">
+              {avitoUrl && (
                 <a
-                  href={`https://t.me/${telegram}`}
+                  href={avitoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-parchment/60 hover:text-gold text-sm transition-colors"
+                  className="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-parchment hover:text-white hover:bg-[#00AAFF] transition-all border border-gold/20 hover:border-transparent"
+                  aria-label="Avito"
                 >
-                  Telegram
+                  <Icons.avito className="w-5 h-5" />
+                </a>
+              )}
+              {vkUrl && (
+                <a
+                  href={vkUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-parchment hover:text-white hover:bg-[#0077FF] transition-all border border-gold/20 hover:border-transparent"
+                  aria-label="VK"
+                >
+                  <Icons.vk className="w-5 h-5" />
+                </a>
+              )}
+              {rutubeUrl && (
+                <a
+                  href={rutubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-parchment hover:text-white hover:bg-[#00AAFF] transition-all border border-gold/20 hover:border-transparent"
+                  aria-label="Rutube"
+                >
+                  <Icons.rutube className="w-5 h-5" />
+                </a>
+              )}
+              {tgChannel && (
+                <a
+                  href={tgChannel}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-parchment hover:text-white hover:bg-[#0088cc] transition-all border border-gold/20 hover:border-transparent"
+                  aria-label="Telegram Channel"
+                >
+                  <Icons.telegram className="w-5 h-5" />
                 </a>
               )}
             </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-2">
-          <p className="text-parchment/40 text-xs">
+        <div className="mt-12 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-2">
+          <p className="text-parchment/40 text-xs text-center">
             © {new Date().getFullYear()} Галерея ЛИК. Все права защищены.
           </p>
         </div>
