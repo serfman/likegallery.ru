@@ -97,13 +97,7 @@ export default async function HomePage() {
                     <span className="font-bold text-sm text-gold">TG</span>
                     <span className="text-sm font-medium tracking-wide">+7 991 158-88-33</span>
                   </a>
-                  <a
-                    href="weixin://dl/chat?79911588833"
-                    className="flex items-center gap-3 bg-dark/60 text-parchment border border-gold/20 px-4 py-3 rounded-xl hover:border-gold/60 hover:text-white hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm transition-all shadow-md active:scale-95"
-                  >
-                    <span className="font-bold text-sm text-gold">WC</span>
-                    <span className="text-sm font-medium tracking-wide">WeChat</span>
-                  </a>
+
                   <a
                     href="https://max.ru/79911588833"
                     target="_blank"

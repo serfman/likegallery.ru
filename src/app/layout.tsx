@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
 
   const telegram = process.env.NEXT_PUBLIC_TELEGRAM ?? ''
-  const wechat = process.env.NEXT_PUBLIC_WECHAT ?? ''
+
   const max = process.env.NEXT_PUBLIC_MAX ?? ''
   const avitoUrl = process.env.NEXT_PUBLIC_AVITO_URL ?? ''
   const vkUrl = process.env.NEXT_PUBLIC_VK_URL ?? ''
@@ -47,7 +47,6 @@ export default function RootLayout({
         />
         <StickyContactWidget
           telegram={telegram}
-          wechat={wechat}
           max={max}
           avitoUrl={avitoUrl}
           vkUrl={vkUrl}

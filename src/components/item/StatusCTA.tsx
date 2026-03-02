@@ -8,6 +8,8 @@ export function StatusCTA({ item }: StatusCTAProps) {
   const { title, category, status, price } = item
 
   const telegram = process.env.NEXT_PUBLIC_TELEGRAM ?? ''
+  const phone = process.env.NEXT_PUBLIC_PHONE ?? ''
+  const max = process.env.NEXT_PUBLIC_MAX ?? ''
 
   if (status === 'sold') {
     const soldMsg = encodeURIComponent(
@@ -24,17 +26,37 @@ export function StatusCTA({ item }: StatusCTAProps) {
         <p className="text-parchment/60 text-sm leading-relaxed">
           Мы купим его дорого. Отправьте фото — эксперт оценит бесплатно и быстро.
         </p>
-        <div className="flex flex-col sm:flex-row gap-3">
-
-          {telegram && (
+        <div className="flex flex-col gap-3">
+          <div className="flex flex-wrap gap-3">
+            {telegram && (
+              <a
+                href={`https://t.me/${telegram}?text=${soldMsg}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 bg-[#0088cc] text-white font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity min-w-[140px]"
+              >
+                <span className="text-xs font-bold opacity-80">TG</span>
+                Telegram
+              </a>
+            )}
+            {max && (
+              <a
+                href={`https://max.ru/${max}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 bg-white text-[#FF4500] font-semibold px-5 py-3 rounded-xl hover:bg-gray-100 transition-colors border border-black/5 min-w-[140px]"
+              >
+                <span className="text-xs font-bold opacity-80">MAX</span>
+                Max
+              </a>
+            )}
+          </div>
+          {phone && (
             <a
-              href={`https://t.me/${telegram}?text=${soldMsg}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 bg-[#0088cc] text-white font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity"
+              href={`tel:${phone}`}
+              className="flex items-center justify-center gap-2 border border-gold/30 text-parchment font-semibold px-5 py-3 rounded-xl hover:bg-gold/10 transition-colors w-full"
             >
-              <span className="text-xs font-bold opacity-80">TG</span>
-              Telegram
+              📞 {phone}
             </a>
           )}
         </div>
@@ -51,7 +73,16 @@ export function StatusCTA({ item }: StatusCTAProps) {
         <p className="text-parchment/60 text-sm leading-relaxed">
           Предмет временно находится на реставрации. Свяжитесь с нами, чтобы узнать сроки.
         </p>
-
+        <div className="flex flex-col gap-3">
+          {phone && (
+            <a
+              href={`tel:${phone}`}
+              className="flex items-center justify-center gap-2 bg-gold text-dark font-semibold px-5 py-3 rounded-xl hover:bg-gold/80 transition-colors w-full"
+            >
+              📞 Позвонить
+            </a>
+          )}
+        </div>
       </div>
     )
   }
@@ -71,17 +102,37 @@ export function StatusCTA({ item }: StatusCTAProps) {
       <p className="text-parchment/60 text-sm leading-relaxed">
         Задайте вопрос или обсудите покупку — ответим быстро
       </p>
-      <div className="flex flex-col sm:flex-row gap-3">
-
-        {telegram && (
+      <div className="flex flex-col gap-3">
+        <div className="flex flex-wrap gap-3">
+          {telegram && (
+            <a
+              href={`https://t.me/${telegram}?text=${buyMsg}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 bg-[#0088cc] text-white font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity min-w-[140px]"
+            >
+              <span className="text-xs font-bold opacity-80">TG</span>
+              Написать в TG
+            </a>
+          )}
+          {max && (
+            <a
+              href={`https://max.ru/${max}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 bg-white text-[#FF4500] font-semibold px-5 py-3 rounded-xl hover:bg-gray-100 transition-colors border border-black/5 min-w-[140px]"
+            >
+              <span className="text-xs font-bold opacity-80">MAX</span>
+              Max
+            </a>
+          )}
+        </div>
+        {phone && (
           <a
-            href={`https://t.me/${telegram}?text=${buyMsg}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 bg-[#0088cc] text-white font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity"
+            href={`tel:${phone}`}
+            className="flex items-center justify-center gap-2 border border-gold/30 text-parchment font-semibold px-5 py-3 rounded-xl hover:bg-gold/10 transition-colors w-full"
           >
-            <span className="text-xs font-bold opacity-80">TG</span>
-            TG
+            📞 {phone}
           </a>
         )}
       </div>

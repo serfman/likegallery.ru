@@ -1,7 +1,7 @@
 import { Icons } from '@/components/ui/Icons'
 
 interface ContactLinkProps {
-  type: 'whatsapp' | 'telegram' | 'wechat' | 'max' | 'avito' | 'vk' | 'rutube' | 'phone' | 'email'
+  type: 'whatsapp' | 'telegram' | 'max' | 'avito' | 'vk' | 'rutube' | 'phone' | 'email'
   value: string
   message?: string
   label: string
@@ -14,7 +14,7 @@ const PREMIER_STYLE = 'bg-dark/60 text-parchment border border-gold/20 hover:bor
 const STYLES: Record<ContactLinkProps['type'], string> = {
   whatsapp: PREMIER_STYLE,
   telegram: PREMIER_STYLE,
-  wechat: PREMIER_STYLE,
+
   max: PREMIER_STYLE,
   avito: PREMIER_STYLE,
   vk: PREMIER_STYLE,
@@ -30,8 +30,7 @@ function buildHref(type: ContactLinkProps['type'], value: string, message?: stri
       return `https://wa.me/${value}${encoded ? `?text=${encoded}` : ''}`
     case 'telegram':
       return `https://t.me/${value}${encoded ? `?text=${encoded}` : ''}`
-    case 'wechat':
-      return `weixin://dl/chat?${value}`
+
     case 'max':
       return `https://max.ru/${value}`
     case 'avito':

@@ -5,7 +5,6 @@ import { ContactLink } from '@/components/ui/ContactLink'
 
 interface StickyContactWidgetProps {
   telegram: string
-  wechat: string
   max: string
   avitoUrl: string
   vkUrl: string
@@ -17,7 +16,6 @@ interface StickyContactWidgetProps {
 
 export function StickyContactWidget({
   telegram,
-  wechat,
   max,
   avitoUrl,
   vkUrl,
@@ -41,9 +39,7 @@ export function StickyContactWidget({
             {telegram && (
               <ContactLink type="telegram" value={telegram} message={message} label="Telegram" />
             )}
-            {wechat && (
-              <ContactLink type="wechat" value={wechat} label="WeChat" />
-            )}
+
             {max && (
               <ContactLink type="max" value={max} label="Max" />
             )}
@@ -86,9 +82,7 @@ export function StickyContactWidget({
             {telegram && (
               <ContactLink type="telegram" value={telegram} message={message} label="Telegram" fullWidth />
             )}
-            {wechat && (
-              <ContactLink type="wechat" value={wechat} label="WeChat" fullWidth />
-            )}
+
             {max && (
               <ContactLink type="max" value={max} label="Max" fullWidth />
             )}
