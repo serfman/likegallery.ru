@@ -44,6 +44,7 @@ export default function RootLayout({
           phone={phone}
           email={email}
           telegram={telegram}
+          max={max}
         />
         <StickyContactWidget
           telegram={telegram}

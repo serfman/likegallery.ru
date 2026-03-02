@@ -101,9 +101,21 @@ export default function AboutPage() {
                 href={`https://t.me/${telegram}?text=${encodeURIComponent('Здравствуйте, хочу оценить предмет.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline-gold"
+                className="flex items-center justify-center gap-2 bg-[#0088cc] text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity min-w-[160px]"
               >
+                <span className="text-xs font-bold opacity-80">TG</span>
                 Telegram
+              </a>
+            )}
+            {process.env.NEXT_PUBLIC_MAX && (
+              <a
+                href={process.env.NEXT_PUBLIC_MAX}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-white text-[#FF4500] font-semibold px-6 py-3 rounded-xl hover:bg-gray-100 transition-colors border border-black/5 min-w-[160px]"
+              >
+                <span className="text-xs font-bold opacity-80">MAX</span>
+                Max
               </a>
             )}
           </div>

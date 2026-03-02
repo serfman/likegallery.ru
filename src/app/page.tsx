@@ -99,13 +99,13 @@ export default async function HomePage() {
                   </a>
 
                   <a
-                    href="https://max.ru/79911588833"
+                    href={process.env.NEXT_PUBLIC_MAX || '#'}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 bg-dark/60 text-parchment border border-gold/20 px-4 py-3 rounded-xl hover:border-gold/60 hover:text-white hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm transition-all shadow-md active:scale-95"
                   >
                     <span className="font-bold text-sm text-[#FF4500]">MAX</span>
-                    <span className="text-sm font-medium tracking-wide">+7 991 158-88-33</span>
+                    <span className="text-sm font-medium tracking-wide">Написать в MAX</span>
                   </a>
                 </div>
               </div>

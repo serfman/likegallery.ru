@@ -115,11 +115,10 @@ export default async function ItemPage({ params }: Props) {
                   {item.category}
                 </Link>
                 <span className="text-parchment/20">·</span>
-                <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${
-                  item.status === 'active' ? 'bg-emerald-900/40 text-emerald-400 border border-emerald-700/30' :
-                  item.status === 'sold' ? 'bg-gold/10 text-gold border border-gold/20' :
-                  'bg-amber-900/40 text-amber-400 border border-amber-700/30'
-                }`}>
+                <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${item.status === 'active' ? 'bg-emerald-900/40 text-emerald-400 border border-emerald-700/30' :
+                    item.status === 'sold' ? 'bg-gold/10 text-gold border border-gold/20' :
+                      'bg-amber-900/40 text-amber-400 border border-amber-700/30'
+                  }`}>
                   {statusLabels[item.status]}
                 </span>
               </div>
@@ -130,7 +129,7 @@ export default async function ItemPage({ params }: Props) {
             </div>
 
             {/* CTA block */}
-            <StatusCTA item={item} />
+            <StatusCTA item={item} slug={slug} />
 
             {/* Description */}
             {item.description && (

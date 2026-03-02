@@ -5,9 +5,10 @@ interface FooterProps {
   phone: string
   email: string
   telegram: string
+  max: string
 }
 
-export function Footer({ phone, email, telegram }: FooterProps) {
+export function Footer({ phone, email, telegram, max }: FooterProps) {
   const vkUrl = process.env.NEXT_PUBLIC_VK_URL ?? ''
   const rutubeUrl = process.env.NEXT_PUBLIC_RUTUBE_URL ?? ''
   const avitoUrl = process.env.NEXT_PUBLIC_AVITO_URL ?? ''
@@ -81,6 +82,17 @@ export function Footer({ phone, email, telegram }: FooterProps) {
                     aria-label="Telegram"
                   >
                     <Icons.telegram className="w-5 h-5" />
+                  </a>
+                )}
+                {max && (
+                  <a
+                    href={max}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-parchment hover:text-white hover:bg-[#FF4500] transition-all border border-gold/20 hover:border-transparent"
+                    aria-label="MAX"
+                  >
+                    <Icons.max className="w-5 h-5" />
                   </a>
                 )}
               </div>

@@ -2,10 +2,14 @@ import type { Item } from '@/types/sanity'
 
 interface StatusCTAProps {
   item: Pick<Item, 'title' | 'category' | 'status' | 'price'>
+  slug: string
 }
 
-export function StatusCTA({ item }: StatusCTAProps) {
+export function StatusCTA({ item, slug }: StatusCTAProps) {
   const { title, category, status, price } = item
+
+  const siteUrl = 'https://likegallery.ru'
+  const itemUrl = `${siteUrl}/catalog/${slug}`
 
   const telegram = process.env.NEXT_PUBLIC_TELEGRAM ?? ''
   const phone = process.env.NEXT_PUBLIC_PHONE ?? ''
@@ -13,7 +17,7 @@ export function StatusCTA({ item }: StatusCTAProps) {
 
   if (status === 'sold') {
     const soldMsg = encodeURIComponent(
-      `У меня есть предмет, похожий на «${title}» (${category}), хочу продать. Можете оценить?`
+      `Мне интересно узнать больше про предмет «${title}» (${category}). Вот ссылка: ${itemUrl}\n\nУ меня есть подобный предмет, хочу продать. Можете оценить?`
     )
     return (
       <div className="bg-dark-soft border border-gold/20 rounded-xl p-6 space-y-4">
@@ -41,7 +45,7 @@ export function StatusCTA({ item }: StatusCTAProps) {
             )}
             {max && (
               <a
-                href={`https://max.ru/${max}`}
+                href={`${max}${max.includes('?') ? '&' : '?'}text=${soldMsg}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 bg-white text-[#FF4500] font-semibold px-5 py-3 rounded-xl hover:bg-gray-100 transition-colors border border-black/5 min-w-[140px]"
@@ -89,7 +93,7 @@ export function StatusCTA({ item }: StatusCTAProps) {
 
   // active
   const buyMsg = encodeURIComponent(
-    `Здравствуйте, интересует предмет «${title}» (${category}) из вашего каталога. Расскажите подробнее.`
+    `Мне интересно узнать больше про предмет «${title}» (${category}). Вот ссылка: ${itemUrl}`
   )
   return (
     <div className="bg-dark-soft border border-gold/20 rounded-xl p-6 space-y-4">
@@ -117,7 +121,7 @@ export function StatusCTA({ item }: StatusCTAProps) {
           )}
           {max && (
             <a
-              href={`https://max.ru/${max}`}
+              href={`${max}${max.includes('?') ? '&' : '?'}text=${buyMsg}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 flex items-center justify-center gap-2 bg-white text-[#FF4500] font-semibold px-5 py-3 rounded-xl hover:bg-gray-100 transition-colors border border-black/5 min-w-[140px]"

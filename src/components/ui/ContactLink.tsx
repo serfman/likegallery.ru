@@ -32,7 +32,7 @@ function buildHref(type: ContactLinkProps['type'], value: string, message?: stri
       return `https://t.me/${value}${encoded ? `?text=${encoded}` : ''}`
 
     case 'max':
-      return `https://max.ru/${value}`
+      return value
     case 'avito':
     case 'vk':
     case 'rutube':
