@@ -40,7 +40,7 @@ export function HeroSection() {
               <div className="w-full h-full overflow-hidden">
                 <img
                   src={src}
-                  className="w-full h-full object-cover object-center animate-slow-zoom"
+                  className="w-full h-full object-cover object-top animate-slow-zoom"
                 />
               </div>
             </SwiperSlide>
