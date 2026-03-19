@@ -35,13 +35,16 @@ export function HeroSection() {
           loop
           className="h-full"
         >
-          {images.map((src) => (
-            <SwiperSlide key={src}>
-              <div className="w-full h-full overflow-hidden">
+          {[0, 3, 6].map((start) => (
+            <SwiperSlide key={start}>
+              <div className="grid grid-cols-3 gap-2 h-full">
+                {images.slice(start, start + 3).map((src) => (
                 <img
+                  key={src}
                   src={src}
-                  className="w-full h-full object-cover object-top animate-slow-zoom"
+                  className="w-full h-full object-cover"
                 />
+                ))}
               </div>
             </SwiperSlide>
           ))}
