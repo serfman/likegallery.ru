@@ -121,3 +121,12 @@
     animation: none;
   }
 }
+
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.animate-slow-zoom {
+  animation: slowZoom 8s ease-in-out infinite alternate;
+}
