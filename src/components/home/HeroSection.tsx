@@ -12,9 +12,14 @@ export function HeroSection() {
   const generalMsg = encodeURIComponent('Здравствуйте, хочу оценить предмет. Можно отправить фото?')
 
   const images = [
-    '/hero/1.jpg',
-    '/hero/2.jpg',
-    '/hero/3.jpg',
+    '/hero/1.jpeg',
+    '/hero/2.jpeg',
+    '/hero/3.jpeg',
+    '/hero/4.jpeg',
+    '/hero/5.jpeg',
+    '/hero/6.jpeg',
+    '/hero/7.jpeg',
+    '/hero/8.jpeg',
   ]
 
   return (
