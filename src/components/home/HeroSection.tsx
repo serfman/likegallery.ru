@@ -26,7 +26,7 @@ export function HeroSection() {
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
 
       {/* СЛАЙДЕР */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
         <Swiper
           modules={[Autoplay, EffectFade]}
           autoplay={{ delay: 5000 }}
