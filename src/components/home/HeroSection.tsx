@@ -26,15 +26,15 @@ export function HeroSection() {
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
 
       {/* СЛАЙДЕР */}
-      <div className="absolute inset-0 bg-black/60 z-0" />
-        <Swiper
-          modules={[Autoplay, EffectFade]}
-          autoplay={{ delay: 5000 }}
-          speed={1500}
-          effect="fade"
-          loop
-          className="h-full"
-        >
+      <div className="absolute inset-0 z-0">
+  <Swiper
+    modules={[Autoplay, EffectFade]}
+    autoplay={{ delay: 5000 }}
+    speed={1500}
+    effect="fade"
+    loop
+    className="h-full"
+  >
           {[0, 3, 6].map((start) => (
             <SwiperSlide key={start}>
               <div className="grid grid-cols-3 gap-2 h-full">
