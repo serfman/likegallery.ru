@@ -36,6 +36,7 @@ export function Footer({ phone, email, telegram, max }: FooterProps) {
                 { href: '/catalog', label: 'Каталог' },
                 { href: '/services', label: 'Услуги' },
                 { href: '/about', label: 'О нас' },
+                { href: '/offer', label: 'Публичная оферта' },
               ].map((link) => (
                 <Link
                   key={link.href}
