@@ -19,6 +19,8 @@ export function Header() {
     { href: '/about', label: 'О нас' },
   ]
 
+  const msg = encodeURIComponent('Добрый день! Оцените мой предмет искусства.')
+  
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -52,12 +54,14 @@ export function Header() {
 
           {/* CTA button */}
           <div className="hidden md:block">
-            <Link
-              href="/#contact"
+            <a
+              href={`https://t.me/likgall?text=${msg}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-gold text-sm py-2 px-5"
             >
               Оценить онлайн
-            </Link>
+            </a>
           </div>
 
           {/* Mobile hamburger */}
