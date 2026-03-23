@@ -32,17 +32,6 @@ export function StatusCTA({ item, slug }: StatusCTAProps) {
         </p>
         <div className="flex flex-col gap-3">
           <div className="flex flex-wrap gap-3">
-            {false && (
-              <a
-                href={`https://t.me/${telegram}?text=${soldMsg}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-[#0088cc] text-white font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity min-w-[140px]"
-              >
-                <span className="text-xs font-bold opacity-80">TG</span>
-                Telegram
-              </a>
-            )}
             {max && (
               <a
                 href={`${max}${max.includes('?') ? '&' : '?'}text=${soldMsg}`}
@@ -51,7 +40,7 @@ export function StatusCTA({ item, slug }: StatusCTAProps) {
                 className="flex-1 flex items-center justify-center gap-2 bg-white text-[#FF4500] font-semibold px-5 py-3 rounded-xl hover:bg-gray-100 transition-colors border border-black/5 min-w-[140px]"
               >
                 <span className="text-xs font-bold opacity-80">MAX</span>
-                Max
+                Написать в MAX
               </a>
             )}
           </div>
@@ -108,17 +97,6 @@ export function StatusCTA({ item, slug }: StatusCTAProps) {
       </p>
       <div className="flex flex-col gap-3">
         <div className="flex flex-wrap gap-3">
-            {false && (
-            <a
-              href={`https://t.me/${telegram}?text=${buyMsg}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 bg-[#0088cc] text-white font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity min-w-[140px]"
-            >
-              <span className="text-xs font-bold opacity-80">TG</span>
-              Написать в TG
-            </a>
-            )}
           {max && (
             <a
               href={`${max}${max.includes('?') ? '&' : '?'}text=${buyMsg}`}
@@ -127,7 +105,7 @@ export function StatusCTA({ item, slug }: StatusCTAProps) {
               className="flex-1 flex items-center justify-center gap-2 bg-white text-[#FF4500] font-semibold px-5 py-3 rounded-xl hover:bg-gray-100 transition-colors border border-black/5 min-w-[140px]"
             >
               <span className="text-xs font-bold opacity-80">MAX</span>
-              Max
+              Написать в MAX
             </a>
           )}
         </div>
