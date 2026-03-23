@@ -15,20 +15,28 @@ export const FEATURED_SOLD_QUERY = groq`
 
 // Catalog: items filtered by category with pagination
 export const ITEMS_QUERY = groq`
-  *[_type == "item" && ($category == "" || category == $category)] | order(_createdAt desc) [$offset...$end] {
-    _id,
-    title,
-    slug,
-    category,
-    status,
-    price,
-    "mainImage": images[0]
-  }
+  *[
+    _type == "item" &&
+    status != "sold" &&
+    ($category == "" || category == $category)
+] | order(_createdAt desc) [$offset...$end] {
+  _id,
+  title,
+  slug,
+  category,
+  status,
+  price,
+  "mainImage": images[0]
+}
 `
 
 // Catalog: total count for pagination
 export const ITEMS_COUNT_QUERY = groq`
-  count(*[_type == "item" && ($category == "" || category == $category)])
+  count(*[
+    _type == "item" &&
+    status != "sold" &&
+    ($category == "" || category == $category)
+  ])
 `
 
 // Single item by slug
