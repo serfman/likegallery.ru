@@ -11,7 +11,6 @@ export function StatusCTA({ item, slug }: StatusCTAProps) {
   const siteUrl = 'https://likegallery.ru'
   const itemUrl = `${siteUrl}/catalog/${slug}`
 
-  const telegram = process.env.NEXT_PUBLIC_TELEGRAM ?? ''
   const phone = process.env.NEXT_PUBLIC_PHONE ?? ''
   const max = process.env.NEXT_PUBLIC_MAX ?? ''
 
