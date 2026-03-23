@@ -42,6 +42,7 @@ export function HeroSection() {
                 <img
                   key={src}
                   src={src}
+                  alt=""
                   className="w-full h-full object-cover"
                 />
                 ))}
