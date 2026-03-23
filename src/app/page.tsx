@@ -11,7 +11,11 @@ export default async function HomePage() {
   let featuredItems: Item[] = []
 
   try {
-    featuredItems = await client.fetch<Item[]>(FEATURED_SOLD_QUERY)
+    featuredItems = await client.fetch<Item[]>(
+      FEATURED_SOLD_QUERY,
+      {},
+      { cache: 'no-store' }
+    )
   } catch {
     // Render without data if Sanity is not configured yet
   }
