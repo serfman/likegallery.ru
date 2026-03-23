@@ -32,7 +32,7 @@ export function StatusCTA({ item, slug }: StatusCTAProps) {
         </p>
         <div className="flex flex-col gap-3">
           <div className="flex flex-wrap gap-3">
-            {telegram && (
+            {false && (
               <a
                 href={`https://t.me/${telegram}?text=${soldMsg}`}
                 target="_blank"
@@ -108,7 +108,7 @@ export function StatusCTA({ item, slug }: StatusCTAProps) {
       </p>
       <div className="flex flex-col gap-3">
         <div className="flex flex-wrap gap-3">
-          {telegram && (
+            {false && (
             <a
               href={`https://t.me/${telegram}?text=${buyMsg}`}
               target="_blank"
@@ -118,7 +118,7 @@ export function StatusCTA({ item, slug }: StatusCTAProps) {
               <span className="text-xs font-bold opacity-80">TG</span>
               Написать в TG
             </a>
-          )}
+            )}
           {max && (
             <a
               href={`${max}${max.includes('?') ? '&' : '?'}text=${buyMsg}`}
