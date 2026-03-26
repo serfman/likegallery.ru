@@ -95,7 +95,7 @@ export default async function HomePage() {
                 <h3 className="font-serif text-gold text-lg mb-4 text-center sm:text-left relative z-10">Написать в мессенджер</h3>
                 <div className="flex flex-col gap-3 relative z-10">
                   <a
-                    href="https://t.me/79911588833"
+                    href="https://t.me/likgall"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 bg-dark/60 text-parchment border border-gold/20 px-4 py-3 rounded-xl hover:border-gold/60 hover:text-white hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm transition-all shadow-md active:scale-95"
