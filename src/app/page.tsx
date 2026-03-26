@@ -5,6 +5,8 @@ import { FeaturedItems } from '@/components/home/FeaturedItems'
 import { MandalaDecoration } from '@/components/home/MandalaDecoration'
 import type { Item } from '@/types/sanity'
 
+const tgChannel = process.env.NEXT_PUBLIC_TG_CHANNEL_URL ?? ''
+
 export const revalidate = 3600
 
 export default async function HomePage() {
@@ -149,7 +151,7 @@ export default async function HomePage() {
                     <span className="text-sm font-medium tracking-wide">Rutube</span>
                   </a>
                   <a
-                    href="https://t.me/+o6vNZULvpwwyZTRi"
+                    href={tgChannel}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 bg-dark/60 text-parchment border border-gold/20 px-4 py-3 rounded-xl hover:border-gold/60 hover:text-white hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm transition-all shadow-md active:scale-95"
