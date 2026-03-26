@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Icons } from '@/components/ui/Icons'
-
+ 
 interface FooterProps {
   phone: string
   telegram: string
