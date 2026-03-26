@@ -72,7 +72,6 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer
           phone={phone}
-          email={email}
           telegram={telegram}
           max={max}
         />
