@@ -36,25 +36,8 @@ export default function RootLayout({
   return (
     <html lang="ru" className="scroll-smooth">
       <body className="bg-dark text-parchment font-sans antialiased min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer
-          phone={phone}
-          email={email}
-          telegram={telegram}
-          max={max}
-        />
-        <StickyContactWidget
-          telegram={telegram}
-          max={max}
-          phone={phone}
-        />
-      </body>
-    </html>
-  )
-}
 
-<Script id="yandex-metrika" strategy="afterInteractive">
+        <Script id="yandex-metrika" strategy="afterInteractive">
 {`
   (function(m,e,t,r,i,k,a){
       m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -84,3 +67,21 @@ export default function RootLayout({
     />
   </div>
 </noscript>
+        
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer
+          phone={phone}
+          email={email}
+          telegram={telegram}
+          max={max}
+        />
+        <StickyContactWidget
+          telegram={telegram}
+          max={max}
+          phone={phone}
+        />
+      </body>
+    </html>
+  )
+}
