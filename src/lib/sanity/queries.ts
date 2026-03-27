@@ -8,7 +8,7 @@ export const FEATURED_SOLD_QUERY = groq`
     slug,
     category,
     status,
-    "mainImage": images[0],
+    "mainImage": images[0].asset->url
     description
   }
 `
@@ -26,7 +26,7 @@ export const ITEMS_QUERY = groq`
   category,
   status,
   price,
-  "mainImage": images[0]
+  "mainImage": images[0].asset->url
 }
 `
 
