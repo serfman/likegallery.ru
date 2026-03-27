@@ -18,6 +18,9 @@ export default async function HomePage() {
       {},
       { cache: 'no-store' }
     )
+
+    console.log('FEATURED ITEMS:', featuredItems.length)
+    
   } catch {
     // Render without data if Sanity is not configured yet
   }
