@@ -2,10 +2,18 @@ import { groq } from 'next-sanity'
 
 // Home page: all sold items as portfolio showcase
 export const FEATURED_SOLD_QUERY = groq`
-  *[_type == "item" && status match "sold*"][0...6] {
+  *[_type == "item" && status match "sold*"] | order(_createdAt desc) {
     _id,
     title,
-    slug
+    slug,
+    category,
+    status,
+    "mainImage": images[0]{
+      asset->{
+        url
+      }
+    },
+    description
   }
 `
 
