@@ -5,6 +5,7 @@ export const FEATURED_SOLD_QUERY = groq`
   *[_type == "item" && status match "sold*"][0...6] {
     _id,
     title,
+    slug
   }
 `
 
