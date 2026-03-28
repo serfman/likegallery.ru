@@ -8,11 +8,8 @@ export const FEATURED_SOLD_QUERY = groq`
     slug,
     category,
     status,
-    "mainImage": images[0]{
-      asset->{
-        url
-      }
-    },
+    images,
+    "mainImage": coalesce(images[0].asset->url, ""),
     description
   }
 `
