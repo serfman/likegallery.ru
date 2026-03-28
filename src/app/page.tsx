@@ -28,6 +28,11 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection />
+
+      <div style={{ color: 'red' }}>
+        DEBUG: {featuredItems.length}
+      </div>
+      
       <FeaturedItems items={featuredItems} />
 
       {/* Inbound sourcing CTA section */}
