@@ -133,16 +133,7 @@ const portableTextComponents: PortableTextComponents = {
   marks: {
     strong: ({ children }) => <strong className="text-parchment font-semibold">{children}</strong>,
     em: ({ children }) => <em className="text-parchment/80 italic">{children}</em>,
-    link: ({ children, value }) => (
-      
-        href={value.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-gold underline underline-offset-2 hover:text-gold/70 transition-colors"
-      >
-        {children}
-      </a>
-    ),
+    link: ({ children, value }) => <a href={value.href} target="_blank" rel="noopener noreferrer" className="text-gold underline underline-offset-2 hover:text-gold/70 transition-colors">{children}</a>,
   },
   types: {
     image: ({ value }) => {
