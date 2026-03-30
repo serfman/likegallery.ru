@@ -12,7 +12,7 @@ interface Article {
   slug: { current: string }
   excerpt?: string
   coverImage?: { asset: object; alt?: string }
-  body?: unknown[]
+  body?: any[]
   publishedAt?: string
 }
 
