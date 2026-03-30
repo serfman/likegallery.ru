@@ -16,6 +16,7 @@ export function Header() {
   const navLinks = [
     { href: '/catalog', label: 'Каталог' },
     { href: '/services', label: 'Услуги' },
+    { href: '/articles', label: 'Статьи' },
     { href: '/about', label: 'О нас' },
   ]
 
