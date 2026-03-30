@@ -141,7 +141,7 @@ const portableTextComponents: PortableTextComponents = {
     em: ({ children }) => <em className="text-parchment/80 italic">{children}</em>,
     link: ({ children, value }) => (
       
-        href={value?.href}
+        href={value.href}
         target="_blank"
         rel="noopener noreferrer"
         className="text-gold underline underline-offset-2 hover:text-gold/70 transition-colors"
