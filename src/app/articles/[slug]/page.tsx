@@ -32,10 +32,11 @@ export async function generateStaticParams() {
 export default async function ArticlePage({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
+  const { slug } = await params
   const article = await client.fetch<Article | null>(ARTICLE_QUERY, {
-    slug: params.slug,
+    slug,
   })
 
   if (!article) notFound()
