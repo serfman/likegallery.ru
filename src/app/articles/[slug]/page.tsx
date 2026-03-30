@@ -52,7 +52,6 @@ export default async function ArticlePage({
 
   return (
     <main className="min-h-screen bg-dark">
-      {/* Обложка */}
       {imageUrl && (
         <div className="relative h-[50vh] min-h-[320px] w-full overflow-hidden">
           <Image
@@ -66,9 +65,7 @@ export default async function ArticlePage({
         </div>
       )}
 
-      {/* Контент */}
       <div className="section-container max-w-3xl mx-auto py-12">
-        {/* Хлебные крошки */}
         <nav className="flex items-center gap-2 text-xs text-parchment/40 mb-8">
           <Link href="/" className="hover:text-gold transition-colors">Главная</Link>
           <span>/</span>
@@ -91,21 +88,18 @@ export default async function ArticlePage({
           </p>
         )}
 
-        {/* Разделитель */}
         <div className="flex items-center gap-4 mb-10">
           <div className="h-px flex-1 bg-gold/15" />
           <span className="text-gold/30 text-xs">✦</span>
           <div className="h-px flex-1 bg-gold/15" />
         </div>
 
-        {/* Тело статьи */}
         {article.body && (
           <div className="prose-article">
             <PortableText value={article.body} components={portableTextComponents} />
           </div>
         )}
 
-        {/* Назад */}
         <div className="mt-16 pt-8 border-t border-gold/10">
           <Link
             href="/articles"
