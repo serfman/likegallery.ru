@@ -5,7 +5,7 @@ import { PortableText, type PortableTextComponents } from '@portabletext/react'
 import { client } from '@/lib/sanity/client'
 import { urlFor } from '@/lib/sanity/image'
 
-export const revalidate = 3600
+export const revalidate = 60
 
 interface Article {
   title: string
