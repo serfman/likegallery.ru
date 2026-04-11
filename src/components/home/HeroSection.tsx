@@ -71,14 +71,14 @@ export function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-12">
-          {whatsapp && (
+          {process.env.NEXT_PUBLIC_MAX && (
             <a
-              href={`https://wa.me/${whatsapp}?text=${generalMsg}`}
+              href={`${process.env.NEXT_PUBLIC_MAX}?text=${generalMsg}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3.5 rounded-xl hover:opacity-90 transition-opacity shadow-lg min-w-[200px] justify-center"
+              className="flex items-center gap-2 bg-black text-white font-semibold px-6 py-3.5 rounded-xl hover:bg-neutral-800 transition-colors shadow-lg min-w-[200px] justify-center"
             >
-              WA Отправить фото
+               MAX Отправить фото
             </a>
           )}
 
