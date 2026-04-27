@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     locale: 'ru_RU',
     type: 'website',
   },
+  verification: {
+    yandex: '4a53403c8f37661f',
+  },
 }
 
 export default function RootLayout({
