@@ -7,7 +7,13 @@
 - **Next.js 15** (App Router, TypeScript)
 - **Sanity.io** (headless CMS, Studio встроен по `/studio`)
 - **Tailwind CSS**
-- **Vercel** (автодеплой при пуше в main)
+- **Timeweb Cloud** — подтверждённое production-размещение на 2026-11-06: nginx → Next.js под PM2.
+
+## Production и диагностика
+
+Сайт работает на сервере Timeweb Cloud: nginx принимает HTTPS и передаёт запросы на `localhost:3000`. Приложение PM2 — `likegallery`, рабочий каталог — `/root/likegallery.ru`. Автодеплой при push в main не подтверждён; перед развёртыванием необходимо проверить действующий процесс и локальные изменения сервера.
+
+Подробности инфраструктуры, результаты проверки и ограничения: [отчёт о диагностике HTTPS от 2026-11-06](docs/reports/2026-11-06-https-delay-diagnostics.md).
 
 ## Быстрый старт
 
@@ -34,10 +40,9 @@ npm run dev
 6. Projection: `{ _type, "slug": slug.current }`
 7. HTTP Headers: `Authorization: Bearer <SANITY_REVALIDATE_SECRET>`
 
-## Переменные окружения (Vercel)
+## Переменные окружения
 
-Добавить в Vercel Dashboard → Project → Settings → Environment Variables:
-- все переменные из `.env.local.example`
+Необходимые переменные перечислены в `.env.local.example`. В production они должны быть доступны приложению при сборке и запуске. Фактический способ передачи переменных на сервере в рамках диагностики HTTPS не проверялся; не публиковать значения секретов.
 
 ## Структура
 
